@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<div style="width: 300px">
+    <a href="">
+        <img src="https://st3.depositphotos.com/1030327/16164/i/450/depositphotos_161644650-stock-photo-autumn-woods-reflected-in-crystal.jpg" class="img-fluid" alt="...">
+    </a>
+    <a href=""></a>
+        <img src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/b70257d9-22bc-4f57-8dbd-3317dc98057f-17-five-flower-lake.jpg" class="img-fluid" alt="...">
+    </a>
+    <a href=""></a>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmj0LyC2KuEibMo3KzzHHScDNR_zBWDjaOlEcsAeCN_W-uSMq488MveDjN2tOwZzluGek&usqp=CAU" class="img-fluid" alt="...">
+    </a>
+    
+    {% for s in node %}
+        {{s.name}}
+        <div>{{s.name}}</div>
+        <!-- <br>
+        <hr>
+        <br>
+        <div>{{s.text}}</div> -->
+    {% endfor %}
+        
+</div>
+
+{% include 'footer.html' %}

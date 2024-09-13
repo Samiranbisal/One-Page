@@ -2,3 +2,20 @@ python3 manage.py runserver \\ project star
 
 django-admin startproject OnePage \\ new project create
 
+python3 manage.py migrate \\ migrate file install
+
+python3 manage.py createsuperuser \\ super user
+
+tusi || wyscy6-Gigsec-xevnez
+
+makvac-Juwtof-5juvda
+
+# Create your views here.
+from django.shortcuts import render
+
+def home(request):
+	print("correct")
+	context = {
+		'message': 'Hello, Django!',
+	}
+	return render(request, 'myapp/index.html', context)
