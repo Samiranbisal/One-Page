@@ -19,3 +19,7 @@ def home(request):
 		'message': 'Hello, Django!',
 	}
 	return render(request, 'myapp/index.html', context)
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

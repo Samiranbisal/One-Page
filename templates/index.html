@@ -10,6 +10,8 @@
     <a href=""></a>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmj0LyC2KuEibMo3KzzHHScDNR_zBWDjaOlEcsAeCN_W-uSMq488MveDjN2tOwZzluGek&usqp=CAU" class="img-fluid" alt="...">
     </a>
+  
+   <!-- <a href="cd/"></a> -->
     
     {% for s in node %}
         {{s.name}}
@@ -19,7 +21,21 @@
         <br>
         <div>{{s.text}}</div> -->
     {% endfor %}
+
+    
+    {% for s in da %}
+        {{s.n1}}
+        <div class="btn btn-primary">First : {{s.n1}}</div>
+        <div class="btn btn-info">Second : {{s.n2}}</div>
+        <div>Equal : {{s.result}}</div>
+    {% endfor %}
+        
         
 </div>
+<br>
+<br>
+
 
 {% include 'footer.html' %}
+
+

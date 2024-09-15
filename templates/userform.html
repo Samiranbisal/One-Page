@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="nam1" placeholder="Enter first number">
+    <input type="text" name="nam2" placeholder="Enter second number">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if result %}
+    <p>Result: {{ result }}</p>
+{% endif %}
+
+
+<!-- <form method="get">
+   <input type="text" name="nam1">
+   <input type="text" name="nam2">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+  {% include 'footer.html' %}

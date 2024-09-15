@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 
@@ -20,4 +20,50 @@ def home(request):
         "data": data,
         "node": node
     }
+    
     return render(request, 'index.html',alldi)
+
+def userform(request):
+    result = None
+    try:
+        if(request.method  == 'POST'):
+            n1 = int(request.POST.get('nam1', 0))  # Use get with a default value to prevent KeyError
+            n2 = int(request.POST.get('nam2', 0))
+            result = n1 + n2
+            print(result)  
+            da = {
+                "n1":n1,
+                "n2":n2,
+                "result":result
+            }
+            url = '/?result={}'.format(result)
+            return HttpResponseRedirect('/',url)
+    except:
+        # This is not really needed if you're handling exceptions
+        pass
+    
+    # Render the result on the page instead of just printing it
+    return render(request, 'userform.html', {'result': result})
+
+def calculator(request):
+    result = 0
+    try:
+        if(request.method  == 'POST'):
+            n1 = int(request.POST.get('n1', 0))  # Use get with
+            n2 = int(request.POST.get('n2', 0))
+            n3 = (request.POST.get('opr', 0))
+            if(n3 == "+"):
+                result = n1 + n2
+            elif(n3 == "-"):
+                result = n1 - n2
+            elif(n3 == "*"):
+                result = n1 * n2
+            elif(n3 == "/"):
+                result = n1 / n2
+            elif(n3 == "%"):
+                result = n1 % n2
+            
+            print(result)    
+    except:
+        result = "Invalid operator"  
+    return render(request, 'calculator.html',{"v1":result})

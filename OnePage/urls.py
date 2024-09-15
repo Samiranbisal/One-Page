@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.home),
     path('about/', views.about),
     path('couses/<uid>', views.couses),
+    path('user/',views.userform),
+    path('cal/',views.calculator,name='cd')
 ]

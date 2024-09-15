@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+<h1 class="text-center">CALCULATOR PROGRAM...!</h1>
+
+<div style="width: 25rem; margin-left: 25rem;">
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter First Number</label>
+          <input type="number" name="n1" class="form-control" id="exampleInputEmail1" aria-describedby="">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Enter Second Number</label>
+          <input type="number" name="n2" class="form-control" id="exampleInputPassword1">
+        </div>
+        <select class="form-select" name="opr" aria-label="Default select example">
+            <option selected>Place Choice</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="%">%</option>
+            <option value="/">/</option>
+          </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <input type="text" value="{{v1}}" class="form-control" id="exampleInputPassword1">
+        <br>
+      </form>
+</div>
+
+{% include 'footer.html' %}
