@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'service1',
+    'tinymce',
+    'fontPage',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,4 @@ STATICFILES_DIRS = [
 
 # url active
 # {% if request.path == '/'%}
+

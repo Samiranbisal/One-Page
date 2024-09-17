@@ -1,0 +1,14 @@
+{% include 'header.html' %}
+    <h1>Font Pame...!</h1>
+    
+    {% for s in name %}
+        <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight">{{s.name}}</div>
+            <div class="p-2 bd-highlight">{{s.title | safe}}</div>
+            <div class="p-2 bd-highlight">{{s.description | safe}}</div>
+        </div>
+      
+    {% endfor %}
+        
+      
+{% include 'footer.html' %}

@@ -1,0 +1,20 @@
+{% include 'header.html' %}
+<h1 class="text-center">Book Page</h1>
+<div class="card1">
+  
+  {% for s in book %}
+  <div class="d-flex p-2">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{s.Book_icon}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{s.Book_title}}</h6>
+      <p class="card-text">{{s.Book_des}}</p>
+      <!-- <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a> -->
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+    
+</div>
+{% include 'footer.html' %}

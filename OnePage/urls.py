@@ -24,5 +24,7 @@ urlpatterns = [
     path('about/', views.about),
     path('couses/<uid>', views.couses),
     path('user/',views.userform),
-    path('cal/',views.calculator,name='cd')
+    path('cal/',views.calculator,name='cd'),
+    path('book/',views.bookpage),
+    path('name/',views.namepage)
 ]

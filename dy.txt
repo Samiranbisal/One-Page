@@ -23,3 +23,11 @@ def home(request):
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+models
+python3 manage.py startapp service1
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+

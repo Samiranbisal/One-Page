@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-
+from service1.models import Book
+from fontPage.models import fontpage
 
 def about(request):
     return HttpResponse("About page")
@@ -46,6 +47,7 @@ def userform(request):
     return render(request, 'userform.html', {'result': result})
 
 def calculator(request):
+
     result = 0
     try:
         if(request.method  == 'POST'):
@@ -67,3 +69,14 @@ def calculator(request):
     except:
         result = "Invalid operator"  
     return render(request, 'calculator.html',{"v1":result})
+
+def bookpage(request):
+    Bookdata = Book.objects.all()[:2]
+    # for a in Bookdata:
+    #     print(a)
+    return render(request, 'bookpage.html',{"book":Bookdata})
+
+def namepage(request):
+    name = fontpage.objects.all()
+
+    return render(request, 'namepage.html',{'name':name})
