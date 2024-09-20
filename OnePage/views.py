@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from service1.models import Book
 from fontPage.models import fontpage
+from contactapp.models import contactNum
 
 def about(request):
     return HttpResponse("About page")
@@ -80,3 +81,23 @@ def namepage(request):
     name = fontpage.objects.all()
 
     return render(request, 'namepage.html',{'name':name})
+
+def savepage(request):
+    if(request.method == "POST"):
+        fname = request.POST.get('firstname')
+        lname = request.POST.get('lestname')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        number = request.POST.get('number')
+        description = request.POST.get('description')
+        con_image = request.POST.get('con_image')
+        en = contactNum(firstname = fname, lestname = lname, email = email, password = password, number = number, description = description,con_image = con_image)
+        en.save()
+    return render(request, 'savepage.html')
+
+def contactform(request):  
+    return render(request,'contactform.html')
+
+def cotactdata(request):
+    data = contactNum.objects.all()
+    return render(request,'contactall.html', {'data':data})

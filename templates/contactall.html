@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+
+
+{% for s in data %}
+<div class="card" style="width: 18rem;">
+    {% comment %} <img src="/media/{{contactNum.con_image}}" class="card-img-top" alt="..."> {% endcomment %}
+    <img src="/media/images/{{ contactnum.con_image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{s.firstname}}</h5>
+      <p class="card-text">{{s.email}}</p>
+      <a href="#" class="btn btn-primary">{{s.number}}</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% include 'footer.html' %}

@@ -1,0 +1,61 @@
+{% include 'header.html' %}
+<div style="margin-bottom: 5rem;"></div>
+<!-- <div style="margin-left: ;"></div> -->
+
+<form method="post" action="{% url 'savepage' %}" style="width: 40rem;">
+  {% csrf_token %}
+  <div class="input-group flex-nowrap">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="First Name"
+      id=""
+      name="firstname"
+    />
+  </div>
+  <div class="input-group flex-nowrap">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Lest Name"
+      id=""
+      name="lestname"
+    />
+  </div>
+  <div class="input-group flex-nowrap">
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Enter Email"
+      id=""
+      name="email"
+    />
+  </div>
+  <div class="input-group flex-nowrap">
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      id=""
+      name="password"
+    />
+  </div>
+  <div class="input-group flex-nowrap">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Contact Number"
+      id=""
+      name="number"
+    />
+  </div>
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="description"></textarea>
+    <label for="floatingTextarea2">Comments</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div style="margin-top: 5rem;"></div>
+
+{% include 'footer.html' %}

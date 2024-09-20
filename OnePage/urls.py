@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from OnePage import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,15 @@ urlpatterns = [
     path('user/',views.userform),
     path('cal/',views.calculator,name='cd'),
     path('book/',views.bookpage),
-    path('name/',views.namepage)
+    path('name/',views.namepage),
+    path('save/',views.savepage, name='savepage'),
+    path('contact/',views.contactform),
+    path('contactpage/',views.cotactdata),
 ]
+
+if(settings.DEBUG):
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+# urlpatterns = [
+#     # your URL patterns...
+# ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
