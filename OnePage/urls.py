@@ -22,16 +22,16 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home,name="home"),
     path('about/', views.about),
-    path('couses/<uid>', views.couses),
+    path('couses/<uid>', views.couses,name='couses2'),
     path('user/',views.userform),
     path('cal/',views.calculator,name='cd'),
     path('book/',views.bookpage),
     path('name/',views.namepage),
     path('save/',views.savepage, name='savepage'),
-    path('contact/',views.contactform),
-    path('contactpage/',views.cotactdata),
+    path('contact/',views.contactform,name='contact'),
+    path('contactpage/',views.cotactdata,name="contactpage1"),
 ]
 
 if(settings.DEBUG):

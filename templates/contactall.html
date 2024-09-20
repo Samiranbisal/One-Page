@@ -1,10 +1,12 @@
 {% include 'header.html' %}
-
+{% comment %} {% load static %} {% endcomment %}
 
 {% for s in data %}
 <div class="card" style="width: 18rem;">
     {% comment %} <img src="/media/{{contactNum.con_image}}" class="card-img-top" alt="..."> {% endcomment %}
-    <img src="/media/images/{{ contactnum.con_image }}" class="card-img-top" alt="...">
+    {% comment %} <img src="{% url 'con_image' arg1 arg2 %}" class="card-img-top" alt="..."> {% endcomment %}
+    <!-- template.html -->
+<img src="/media/{{ contactNum.con_image }}" alt="Service Image">
     <div class="card-body">
       <h5 class="card-title">{{s.firstname}}</h5>
       <p class="card-text">{{s.email}}</p>
